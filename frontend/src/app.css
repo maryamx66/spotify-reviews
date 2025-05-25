@@ -1,0 +1,31 @@
+:root {
+  box-sizing: border-box;
+  font-family: sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --spotify-green: #1db954;
+}
+
+.center {
+  text-align: center;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+button,
+.button {
+  border-radius: 9999px;
+  border: none;
+  padding: 1rem 1.5rem;
+  background: var(--spotify-green);
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Review {
+  id Int @id @default(autoincrement())
+  spotify_id String @db.VarChar(255)
+  user_id String @db.VarChar(255)
+  review_text String?
+  rating Int 
+}
+
+// SELECT id, spotify_id FROM review WHERE user_id = "000"
