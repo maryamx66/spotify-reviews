@@ -55,4 +55,9 @@
 {/if}
 
 
-<style></style>
+<style>
+  h2 {
+    font-family: sans-serif;
+    color: rgb(74, 73, 73);
+  }
+</style>
