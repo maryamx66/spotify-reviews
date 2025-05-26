@@ -4,7 +4,7 @@ services:
     image: mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_DATABASE: spotify-reviews
     volumes:
       - spotify-reviews-db-data:/var/lib/mysql
