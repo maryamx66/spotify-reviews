@@ -1,0 +1,25 @@
+services:
+  db:
+    container_name: spotify-reviews-db
+    image: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: spotify-reviews
+    volumes:
+      - spotify-reviews-db-data:/var/lib/mysql
+  backend:
+    container_name: spotify-reviews
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "mysql://root:root@db:3306/spotify-reviews"
+      CLIENT_ID: "spotify client id"
+      CLIENT_SECRET: "spotify client secret"
+      FRONTEND_URL: "https://127.0.0.1:5173"
+      JWT_SECRET: "vennerionjiorngbioenogn"
+
+volumes:
+  spotify-reviews-db-data: {}
