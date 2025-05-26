@@ -96,7 +96,7 @@
 </article>
 
 {#if showNewReviewModal}
-<ReviewModal bind:review={newReview} bind:showModal={showNewReviewModal} onsubmit={addReview} />
+<ReviewModal  bind:review={newReview} bind:showModal={showNewReviewModal} onsubmit={addReview} {show} />
 {/if}
 
 {#if showShowReviewModal && review}
@@ -104,7 +104,7 @@
 {/if}
 
 {#if showEditReviewModal && review}
-<ReviewModal bind:review={review} bind:showModal={showEditReviewModal} onsubmit={editReview} />
+<ReviewModal {show} bind:review={review} bind:showModal={showEditReviewModal} onsubmit={editReview} />
 {/if}
 
 <style>
@@ -132,6 +132,7 @@
     border-radius: 1rem;
     border-color: var(--spotify-green);
     background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
   }
 
   .content {

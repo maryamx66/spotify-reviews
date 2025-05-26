@@ -4,7 +4,7 @@
 	let dialog = $state(); // HTMLDialogElement
 
 	$effect(() => {
-		if (showModal) dialog.showModal();
+		if (showModal) dialog.showModal()
 	});
 </script>
 
@@ -18,7 +18,6 @@
 		{@render header?.()}
 		<hr />
 		{@render children?.()}
-		<hr />
 		<!-- svelte-ignore a11y_autofocus -->
 		<button autofocus onclick={() => dialog.close()}>Exit</button>
 	</div>
@@ -64,6 +63,6 @@
 	}
 	button {
 		display: block;
-    margin-top: auto;
+    margin-top: 1rem;
 	}
 </style>

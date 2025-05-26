@@ -47,8 +47,22 @@
 </script>
 
 <Header></Header>
+
 {#if !$currentUser}
+<div>
+  <h2>
+    Welcome to SpotiRev!
+
+  </h2>
+  <p>
+     this app allows you to log in with your Spotify account
+    to review your saved podcasts.
+    You can add a review, edit it, and delete it. <br><br>
+    
+    Please log in with your Spotify account to start reviewing! 
+  </p>
   <a class="button" href="{API_URL + "/login"}">Log in with Spotify</a>
+</div>
 {:else}
   <h2>Hello, {$currentUser.user_data.display_name}</h2>
   <PodcastList></PodcastList>
@@ -57,7 +71,33 @@
 
 <style>
   h2 {
-    font-family: sans-serif;
-    color: rgb(74, 73, 73);
+    font-family: Outfit, sans-serif;
+    color: var(--spotify-green);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
   }
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--spotify-green);
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 32rem;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+
+  }
+
+p{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+a {
+  margin-top: 2rem;
+}
 </style>
