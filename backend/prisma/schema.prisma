@@ -12,7 +12,7 @@ model Review {
   id Int @id @default(autoincrement())
   spotify_id String @db.VarChar(255)
   user_id String @db.VarChar(255)
-  review_text String?
+  review_text String? @db.LongText
   rating Int 
 }
 
