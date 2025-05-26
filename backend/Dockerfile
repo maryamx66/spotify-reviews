@@ -10,4 +10,5 @@ COPY . .
 
 RUN npx prisma generate
 
+ENV NODE_ENV=production
 CMD [ "npm", "run", "start" ]
